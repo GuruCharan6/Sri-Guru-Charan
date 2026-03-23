@@ -55,7 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 60px;
 
 /* HERO */
 .hero{min-height:100vh;padding-top:68px;display:flex;align-items:center;justify-content:center;
-  padding-left:80px;padding-right:80px;position:relative;z-index:1;}
+  padding-left:80px;padding-right:80px;position:relative;z-index:1;padding-bottom:80px;}
 .hero-inner{display:grid;grid-template-columns:1fr 320px;align-items:center;gap:48px;
   width:100%;max-width:1000px;}
 .hero-left{max-width:640px;}
@@ -77,7 +77,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;padding:0 60px;
   animation:fadeUp .6s .35s ease both;}
 .hero-desc .hl-teal{color:var(--mint);font-weight:600;}
 .hero-desc .hl-amber{color:var(--amber);font-weight:700;font-style:italic;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .6s .48s ease both;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .6s .48s ease both;margin-bottom:20px;}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:10px;
   font-family:var(--display);font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;
   border:none;transition:transform .2s,filter .2s;}
@@ -340,12 +340,12 @@ const SKILLS = [
 
 // ── COMPONENT ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [activeSection, setActiveSection] = useState("projects");
+  const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const sectionRefs = useRef({});
 
   useEffect(() => {
-    const ids = ["projects", "skills", "experience", "contact"];
+    const ids = [ "hero" ,"projects", "skills", "experience", "contact"];
     const observers = ids.map((id) => {
       const el = document.getElementById(id);
       if (!el) return null;
