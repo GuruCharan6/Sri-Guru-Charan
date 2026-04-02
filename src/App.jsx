@@ -115,7 +115,14 @@ section{padding:88px 120px;position:relative;z-index:1;}
 .proj-num{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--mint);opacity:.5;}
 .proj-icon{font-size:26px;}
 .proj-title{font-family:var(--display);font-size:19px;font-weight:700;color:var(--text);line-height:1.25;}
-.proj-desc{font-size:13.5px;line-height:1.75;color:var(--muted);flex:1;}
+
+/* Project description as bullet points */
+.proj-desc-list{list-style:none;display:flex;flex-direction:column;gap:6px;flex:1;padding:0;margin:0;}
+.proj-desc-list li{font-size:13.5px;line-height:1.7;color:var(--muted);
+  display:flex;align-items:flex-start;gap:8px;}
+.proj-desc-list li::before{content:'▸';color:var(--mint);font-size:11px;
+  flex-shrink:0;margin-top:3px;opacity:.75;}
+
 .proj-tags{display:flex;flex-wrap:wrap;gap:7px;}
 .ptag{font-family:var(--display);font-size:11px;font-weight:500;padding:4px 11px;border-radius:6px;
   background:rgba(130,208,194,.08);color:var(--mint);border:1px solid rgba(130,208,194,.15);}
@@ -249,7 +256,12 @@ const PROJECTS = [
   {
     num: "01", icon: "",
     title: "AI-Powered Document Verification Platform",
-    desc: "Platform supporting 20+ Indian document types across 8+ regional languages. PaddleOCR + Tesseract for field extraction, OpenCV for fraud/tamper detection, Groq LLM delivers APPROVED / REVIEW / REJECTED verdicts. Production-deployed on Vercel + Render with Supabase Storage and full audit logs.",
+    desc: [
+      "Supports 20+ Indian document types across 8+ regional languages.",
+      "PaddleOCR + Tesseract for field extraction; OpenCV for fraud & tamper detection.",
+      "Groq LLM delivers APPROVED / REVIEW / REJECTED verdicts with reasoning.",
+      "Production-deployed on Vercel + Render with Supabase Storage and full audit logs.",
+    ],
     tags: [
       { label: "FastAPI" }, { label: "React/Vite" }, { label: "PaddleOCR" },
       { label: "Tesseract" }, { label: "OpenCV" }, { label: "Groq LLM", cls: "amber" },
@@ -260,7 +272,12 @@ const PROJECTS = [
   {
     num: "02", icon: "",
     title: "JobFeed — AI Daily Job Digest",
-    desc: "Full-stack platform fetching real job listings daily, scoring each against a user profile using LLaMA 3.3 70B, and delivering ranked matches via email at a user-configured time. Smart caching collapses 100 user queries into 1 API call; minute-tick scheduler guarantees on-time delivery.",
+    desc: [
+      "Fetches real job listings daily and scores each against a personalised user profile.",
+      "LLaMA 3.3 70B ranks matches and delivers results via email at a user-configured time.",
+      "Smart caching collapses 100 user queries into 1 API call, cutting costs significantly.",
+      "Minute-tick scheduler guarantees on-time delivery with zero missed sends.",
+    ],
     tags: [
       { label: "FastAPI" }, { label: "LLaMA 3.3 70B", cls: "amber" },
       { label: "React/TS" }, { label: "Supabase" }, { label: "Resend" },
@@ -270,7 +287,12 @@ const PROJECTS = [
   {
     num: "03", icon: "",
     title: "AI Digital Twin",
-    desc: "End-to-end GenAI pipeline: FLUX LoRA trained on personal photos, voice cloned via Chatterbox, lip-synced talking-head video (640×640, 25FPS) rendered using WanVideo 2.1 14B GGUF in ComfyUI.",
+    desc: [
+      "FLUX LoRA trained on personal photos for identity-consistent image generation.",
+      "Voice cloned via Chatterbox for natural-sounding speech synthesis.",
+      "Lip-synced talking-head video rendered at 640×640, 25 FPS using WanVideo 2.1 14B GGUF.",
+      "Full pipeline orchestrated inside ComfyUI for end-to-end reproducibility.",
+    ],
     tags: [
       { label: "FLUX LoRA", cls: "orange" }, { label: "WanVideo 2.1", cls: "orange" },
       { label: "ComfyUI" }, { label: "Chatterbox" },
@@ -280,7 +302,12 @@ const PROJECTS = [
   {
     num: "04", icon: "",
     title: "AI Product Photography",
-    desc: "Custom LoRA trained on FLUX.1 Dev using 100% AI-generated synthetic images. Photorealistic product shots across varied environments via prompt engineering — zero real photos needed.",
+    desc: [
+      "Custom LoRA fine-tuned on FLUX.1 Dev using 100% AI-generated synthetic images.",
+      "Produces photorealistic product shots across varied environments via prompt engineering.",
+      "Zero real product photos required in training or inference.",
+      "Workflow managed end-to-end in ComfyUI for repeatable, high-quality output.",
+    ],
     tags: [
       { label: "FLUX.1 Dev", cls: "orange" }, { label: "LoRA Training" },
       { label: "ComfyUI" }, { label: "Synthetic Data" },
@@ -290,7 +317,11 @@ const PROJECTS = [
   {
     num: "05", icon: "",
     title: "Currency Notes Classifier",
-    desc: "End-to-end ML pipeline on 1,100+ samples. SVM & Random Forest achieving 98.2% accuracy with strong F1. Confusion matrix and feature-importance visuals for model explainability.",
+    desc: [
+      "End-to-end ML pipeline trained on 1,100+ currency note samples.",
+      "SVM & Random Forest models achieving 98.2% accuracy with strong F1 scores.",
+      "Confusion matrix and feature-importance visuals for full model explainability.",
+    ],
     tags: [
       { label: "98.2% Accuracy", cls: "amber" }, { label: "scikit-learn" },
       { label: "SVM" }, { label: "Random Forest" },
@@ -422,11 +453,9 @@ export default function App() {
               <span className="hl-amber">outcome</span> as the focus.
             </p>
             <div className="hero-btns">
-              {/* ── LinkedIn button with real icon ── */}
               <a href="https://www.linkedin.com/in/sri-guru-charan/" target="_blank" rel="noreferrer" className="btn btn-teal">
                 <LinkedinIcon size={18} /> LinkedIn
               </a>
-              {/* ── GitHub button with real icon ── */}
               <a href="https://github.com/GuruCharan6" target="_blank" rel="noreferrer" className="btn btn-outline">
                 <GithubIcon size={18} /> GitHub
               </a>
@@ -514,19 +543,16 @@ export default function App() {
           Actively looking for my first full-time role in AI/ML engineering or GenAI development. I ship real things, learn fast, and care about production quality.
         </p>
         <div className="contact-cards">
-          {/* ── Email card with real icon ── */}
           <a href="mailto:gurucharanpunjala@gmail.com" className="contact-card">
             <span className="cc-icon"><EmailIcon size={28} /></span>
             <span className="cc-label">Email</span>
             <span className="cc-value">gurucharanpunjala@gmail.com</span>
           </a>
-          {/* ── LinkedIn card with real icon ── */}
           <a href="https://www.linkedin.com/in/sri-guru-charan/" target="_blank" rel="noreferrer" className="contact-card">
             <span className="cc-icon"><LinkedinIcon size={28} /></span>
             <span className="cc-label">LinkedIn</span>
             <span className="cc-value">linkedin.com/in/sri-guru-charan</span>
           </a>
-          {/* ── GitHub card with real icon ── */}
           <a href="https://github.com/GuruCharan6" target="_blank" rel="noreferrer" className="contact-card">
             <span className="cc-icon"><GithubIcon size={28} /></span>
             <span className="cc-label">GitHub</span>
@@ -558,13 +584,16 @@ function ProjectCard({ num, icon, title, desc, tags, link }) {
       <div className="proj-num">{num}</div>
       <div className="proj-icon">{icon}</div>
       <div className="proj-title">{title}</div>
-      <p className="proj-desc">{desc}</p>
+      <ul className="proj-desc-list">
+        {desc.map((point, i) => (
+          <li key={i}>{point}</li>
+        ))}
+      </ul>
       <div className="proj-tags">
         {tags.map((t) => (
           <span key={t.label} className={`ptag ${t.cls || ""}`}>{t.label}</span>
         ))}
       </div>
-      {/* ── GitHub link with real icon ── */}
       <a href={link} target="_blank" rel="noreferrer" className="proj-link">
         <GithubIcon size={14} /> View on GitHub →
       </a>
