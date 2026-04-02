@@ -481,7 +481,7 @@ export default function App() {
       {/* PROJECTS */}
       <section id="projects">
         <div className="sec-eyebrow">What I've Built</div>
-        <h2 className="sec-title">Production AI <span className="grad-teal">Projects</span></h2>
+        <h2 className="sec-title">Production ready AI <span className="grad-teal">Projects</span></h2>
         <div className="projects-row1">
           {PROJECTS.slice(0, 2).map((p) => <ProjectCard key={p.num} {...p} />)}
         </div>
