@@ -131,6 +131,8 @@ section{padding:88px 120px;position:relative;z-index:1;}
 .proj-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-size:13px;
   font-weight:600;color:var(--mint);text-decoration:none;transition:gap .2s;margin-top:4px;}
 .proj-link:hover{gap:10px;}
+.proj-link.live{color:var(--amber);}
+.proj-links-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
 
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
@@ -248,6 +250,12 @@ const EmailIcon = ({ size = 20 }) => (
   </svg>
 );
 
+const ExternalLinkIcon = ({ size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+  </svg>
+);
+
 // ── PHOTO ─────────────────────────────────────────────────────────────────────
 const PHOTO_SRC = "/charan.png";
 
@@ -255,22 +263,6 @@ const PHOTO_SRC = "/charan.png";
 const PROJECTS = [
   {
     num: "01", icon: "",
-    title: "AI-Powered Document Verification Platform",
-    desc: [
-      "Supports 11+ Indian document types across 8+ regional languages.",
-      "PaddleOCR + Tesseract for field extraction; OpenCV for fraud & tamper detection.",
-      "Groq LLM delivers APPROVED / REVIEW / REJECTED verdicts with reasoning.",
-      "Production-deployed on Vercel + Render with Supabase Storage and full audit logs.",
-    ],
-    tags: [
-      { label: "FastAPI" }, { label: "React/Vite" }, { label: "PaddleOCR" },
-      { label: "Tesseract" }, { label: "OpenCV" }, { label: "Groq LLM", cls: "amber" },
-      { label: "Supabase" },
-    ],
-    link: "https://github.com/GuruCharan6/AI-Powered_Document_Verification",
-  },
-  {
-    num: "02", icon: "",
     title: "JobDigest — AI Powered Daily Job Digest Platform",
     desc: [
       "Fetches real job listings daily and scores each against a personalised user profile.",
@@ -284,6 +276,22 @@ const PROJECTS = [
     ],
     link: "https://github.com/GuruCharan6/JodDigest-AI-powered-daily-job-digest",
     live: "https://jobdigest.site",
+  },
+  {
+    num: "02", icon: "",
+    title: "AI-Powered Document Verification Platform",
+    desc: [
+      "Supports 11+ Indian document types across 8+ regional languages.",
+      "PaddleOCR + Tesseract for field extraction; OpenCV for fraud & tamper detection.",
+      "Groq LLM delivers APPROVED / REVIEW / REJECTED verdicts with reasoning.",
+      "Production-deployed on Vercel + Render with Supabase Storage and full audit logs.",
+    ],
+    tags: [
+      { label: "FastAPI" }, { label: "React/Vite" }, { label: "PaddleOCR" },
+      { label: "Tesseract" }, { label: "OpenCV" }, { label: "Groq LLM", cls: "amber" },
+      { label: "Supabase" },
+    ],
+    link: "https://github.com/GuruCharan6/AI-Powered_Document_Verification",
   },
   {
     num: "03", icon: "",
@@ -579,7 +587,7 @@ export default function App() {
   );
 }
 
-function ProjectCard({ num, icon, title, desc, tags, link }) {
+function ProjectCard({ num, icon, title, desc, tags, link, live }) {
   return (
     <div className="proj-card">
       <div className="proj-num">{num}</div>
@@ -595,9 +603,16 @@ function ProjectCard({ num, icon, title, desc, tags, link }) {
           <span key={t.label} className={`ptag ${t.cls || ""}`}>{t.label}</span>
         ))}
       </div>
-      <a href={link} target="_blank" rel="noreferrer" className="proj-link">
-        <GithubIcon size={14} /> View on GitHub →
-      </a>
+      <div className="proj-links-row">
+        <a href={link} target="_blank" rel="noreferrer" className="proj-link">
+          <GithubIcon size={14} /> View on GitHub →
+        </a>
+        {live && (
+          <a href={live} target="_blank" rel="noreferrer" className="proj-link live">
+            <ExternalLinkIcon size={14} /> Live Site →
+          </a>
+        )}
+      </div>
     </div>
   );
 }
