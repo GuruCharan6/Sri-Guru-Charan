@@ -257,7 +257,7 @@ const PROJECTS = [
     num: "01", icon: "",
     title: "AI-Powered Document Verification Platform",
     desc: [
-      "Supports 20+ Indian document types across 8+ regional languages.",
+      "Supports 11+ Indian document types across 8+ regional languages.",
       "PaddleOCR + Tesseract for field extraction; OpenCV for fraud & tamper detection.",
       "Groq LLM delivers APPROVED / REVIEW / REJECTED verdicts with reasoning.",
       "Production-deployed on Vercel + Render with Supabase Storage and full audit logs.",
@@ -283,6 +283,7 @@ const PROJECTS = [
       { label: "React/TS" }, { label: "Supabase" }, { label: "Resend" },
     ],
     link: "https://github.com/GuruCharan6/JodDigest-AI-powered-daily-job-digest",
+    live: "https://jobdigest.site",
   },
   {
     num: "03", icon: "",
