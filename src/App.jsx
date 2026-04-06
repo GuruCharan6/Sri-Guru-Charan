@@ -271,7 +271,7 @@ const PROJECTS = [
   },
   {
     num: "02", icon: "",
-    title: "JobFeed — AI Daily Job Digest",
+    title: "JobDigest — AI Powered Daily Job Digest Platform",
     desc: [
       "Fetches real job listings daily and scores each against a personalised user profile.",
       "LLaMA 3.3 70B ranks matches and delivers results via email at a user-configured time.",
@@ -282,7 +282,7 @@ const PROJECTS = [
       { label: "FastAPI" }, { label: "LLaMA 3.3 70B", cls: "amber" },
       { label: "React/TS" }, { label: "Supabase" }, { label: "Resend" },
     ],
-    link: "https://github.com/GuruCharan6/JodFeed-AI-powered-daily-job-digest",
+    link: "https://github.com/GuruCharan6/JodDigest-AI-powered-daily-job-digest",
   },
   {
     num: "03", icon: "",
