@@ -155,7 +155,7 @@ section{padding:88px 120px;position:relative;z-index:1;}
 .sk-badge.learn{background:rgba(130,130,130,.1);color:var(--muted);}
 
 /* EXPERIENCE */
-.exp-cards-row{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.exp-cards-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .exp-logo-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:16px;
   padding:24px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;
   gap:10px;transition:border-color .25s,transform .25s;}
