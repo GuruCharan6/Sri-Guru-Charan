@@ -261,8 +261,27 @@ const PHOTO_SRC = "/charan.png";
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
 const PROJECTS = [
+  // ── CHANGED: CareCircle added as 01 ──────────────────────────────────────
   {
     num: "01", icon: "",
+    title: "CareCircle – Multi-Agent Eldercare Coordination Platform",
+    desc: [
+      "Eldercare coordination in India is fragmented with no single source of truth for families managing ageing parents remotely.",
+      "Built a multi-agent AI platform using LangGraph and FastAPI orchestrating medication tracking, health monitoring, and caregiver alerts.",
+      "Engineered a Gemini 2.5 clinical drug interaction pipeline with custom prompt engineering, validated by a practising doctor.",
+      "Supabase Storage with RLS for secure medical document uploads; Sentry on Render for production error monitoring.",
+    ],
+    tags: [
+      { label: "LangGraph", cls: "amber" }, { label: "FastAPI" },
+      { label: "Next.js 15" }, { label: "Gemini 2.5", cls: "amber" },
+      { label: "Claude API" }, { label: "Sarvam AI" }, { label: "Supabase" },
+    ],
+    link: "https://github.com/GuruCharan6/CareCircle", // ← update with your actual repo link
+    live: "https://care-circle-three.vercel.app/",
+  },
+  // ── existing projects renumbered 02–05 ───────────────────────────────────
+  {
+    num: "02", icon: "",
     title: "JobDigest — AI Powered Daily Job Digest Platform",
     desc: [
       "Fetches real job listings daily and scores each against a personalised user profile.",
@@ -278,7 +297,7 @@ const PROJECTS = [
     live: "https://jobdigest.site",
   },
   {
-    num: "02", icon: "",
+    num: "03", icon: "",
     title: "AI-Powered Document Verification Platform",
     desc: [
       "Supports 11+ Indian document types across 8+ regional languages.",
@@ -294,7 +313,7 @@ const PROJECTS = [
     link: "https://github.com/GuruCharan6/AI-Powered_Document_Verification",
   },
   {
-    num: "03", icon: "",
+    num: "04", icon: "",
     title: "AI Digital Twin",
     desc: [
       "FLUX LoRA trained on personal photos for identity-consistent image generation.",
@@ -309,7 +328,7 @@ const PROJECTS = [
     link: "https://github.com/GuruCharan6/AI-Digital-Twin",
   },
   {
-    num: "04", icon: "",
+    num: "05", icon: "",
     title: "AI Product Photography",
     desc: [
       "Custom LoRA fine-tuned on FLUX.1 Dev using 100% AI-generated synthetic images.",
@@ -323,20 +342,6 @@ const PROJECTS = [
     ],
     link: "https://github.com/GuruCharan6/AI-Product-Photography-using-LoRA",
   },
-  {
-    num: "05", icon: "",
-    title: "Currency Notes Classifier",
-    desc: [
-      "End-to-end ML pipeline trained on 1,100+ currency note samples.",
-      "SVM & Random Forest models achieving 98.2% accuracy with strong F1 scores.",
-      "Confusion matrix and feature-importance visuals for full model explainability.",
-    ],
-    tags: [
-      { label: "98.2% Accuracy", cls: "amber" }, { label: "scikit-learn" },
-      { label: "SVM" }, { label: "Random Forest" },
-    ],
-    link: "https://github.com/GuruCharan6/Predicting-Currency-Whether-Original-or-Fake-using-Random-Forest-Algorithm",
-  },
 ];
 
 const SKILLS = [
@@ -344,11 +349,12 @@ const SKILLS = [
     title: "AI / GenAI", cls: "t",
     items: [
       { name: "LLM APIs (Groq, OpenAI, Claude)", badge: "Strong", bcls: "strong" },
+      // ── CHANGED: LangGraph added ─────────────────────────────────────────
+      { name: "LangGraph / Agentic Frameworks", badge: "Strong", bcls: "strong" },
       { name: "LoRA Training (FLUX, Diffusion)", badge: "Strong", bcls: "strong" },
       { name: "Prompt Engineering", badge: "Strong", bcls: "strong" },
       { name: "ComfyUI / Video Generation", badge: "Proficient", bcls: "good" },
       { name: "RAG Pipelines", badge: "Advancing", bcls: "learn" },
-      { name: "LLM Fine-tuning / Tool Calling", badge: "Advancing", bcls: "learn" },
     ],
     dot: "dot-t",
   },
@@ -357,9 +363,10 @@ const SKILLS = [
     items: [
       { name: "Python", badge: "Strong", bcls: "strong" },
       { name: "FastAPI / Flask / REST APIs", badge: "Strong", bcls: "strong" },
-      { name: "React / TypeScript / Vite", badge: "Proficient", bcls: "good" },
+      // ── CHANGED: Next.js 15 added ────────────────────────────────────────
+      { name: "Next.js 15 / React / TypeScript", badge: "Proficient", bcls: "good" },
       { name: "PostgreSQL / Supabase / MySQL", badge: "Proficient", bcls: "good" },
-      { name: "JavaScript / TypeScript", badge: "Proficient", bcls: "good" },
+      { name: "Celery / Redis", badge: "Proficient", bcls: "good" },
       { name: "Git / Jupyter Notebook", badge: "Proficient", bcls: "good" },
     ],
     dot: "dot-a",
@@ -457,9 +464,10 @@ export default function App() {
               <span className="line3">Ship.</span>
             </h1>
             <p className="hero-desc">
-              Hi, I'm <span className="hl-teal">Sri Guru Charan Punjala</span> — a CSE (Data Science) graduate from Hyderabad building production-grade AI applications. Specialised in{" "}
-              <span className="hl-teal">LLM integration, LoRA training, and full-stack AI systems</span>, keeping{" "}
-              <span className="hl-amber">outcome</span> as the focus.
+              Hi, I'm <span className="hl-teal">Sri Guru Charan Punjala</span> - a CSE
+              (Data Science) grad from Hyderabad. I build{" "}
+              <span className="hl-teal">multi-agent AI systems</span> end-to-end, from
+              LangGraph orchestration to full-stack deployment.
             </p>
             <div className="hero-btns">
               <a href="https://www.linkedin.com/in/sri-guru-charan/" target="_blank" rel="noreferrer" className="btn btn-teal">
@@ -541,6 +549,16 @@ export default function App() {
             </div>
             <span className="exp-pill amber">Jan – May 2025</span>
           </div>
+          <div className="exp-logo-card">
+            <div className="exp-logo-circle">🎓</div>
+            <div className="exp-card-body">
+              <div className="exp-org">100xEngineers</div>
+              <div className="exp-role-label">Applied Generative AI</div>
+              <div className="exp-detail">Cohort 6 · Mentor: <strong>Siddhant Goswami</strong></div>
+            </div>
+      <span className="exp-pill teal">2025</span>
+    </div>
+
         </div>
       </section>
 
@@ -572,7 +590,7 @@ export default function App() {
           <a href="mailto:gurucharanpunjala@gmail.com" className="btn btn-teal">
             <EmailIcon size={16} /> Reach Me
           </a>
-          <a href="/SRI GURU CHARAN PUNJALA.pdf" download className="btn btn-outline">
+          <a href="/Sri_Guru_Charan_Punjala.pdf" download className="btn btn-outline">
             My Resume
           </a>
         </div>
