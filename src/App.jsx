@@ -590,7 +590,7 @@ export default function App() {
           <a href="mailto:gurucharanpunjala@gmail.com" className="btn btn-teal">
             <EmailIcon size={16} /> Reach Me
           </a>
-          <a href="/Sri_Guru_Charan_Punjala.pdf" download className="btn btn-outline">
+          <a href="/Sri_Guru_Charan.pdf" download className="btn btn-outline">
             My Resume
           </a>
         </div>
