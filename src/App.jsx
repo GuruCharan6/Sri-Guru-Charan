@@ -547,7 +547,7 @@ export default function App() {
               <div className="exp-role-label amber">Python Backend Intern</div>
               <div className="exp-detail">Flask APIs · Selenium WebDriver testing</div>
             </div>
-            <span className="exp-pill amber">Jan – May 2025</span>
+            <span className="exp-pill amber">Jan 2025 – Jan 2026</span>
           </div>
           <div className="exp-logo-card">
             <div className="exp-logo-circle">🎓</div>
