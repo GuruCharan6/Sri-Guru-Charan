@@ -544,7 +544,7 @@ export default function App() {
             <div className="exp-logo-circle">💼</div>
             <div className="exp-card-body">
               <div className="exp-org">iCompaas</div>
-              <div className="exp-role-label amber">Python Backend Intern</div>
+              <div className="exp-role-label amber">Python Backend Developer</div>
               <div className="exp-detail">Flask APIs · Selenium WebDriver testing</div>
             </div>
             <span className="exp-pill amber">Jan 2025 – Jan 2026</span>
